@@ -1,0 +1,14 @@
+<Sysmon schemaversion="4.81">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <Rule name="TechniqueID=T1057,TechniqueName=Process Discovery" groupRelation="and">
+          <CommandLine condition="contains">ps</CommandLine>
+          <CommandLine condition="contains">top</CommandLine>
+          <CommandLine condition="contains">htop</CommandLine>
+          <CommandLine condition="contains">nmon</CommandLine>
+        </Rule>
+      </ProcessCreate>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

@@ -1,0 +1,11 @@
+<Sysmon schemaversion="4.81">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <Rule name="TechniqueID=T1562 T1562.001,TechniqueName=Impair Defenses / Disable or Modify Tools" groupRelation="and">
+          <CommandLine condition="contains all">setenforce;0</CommandLine>
+        </Rule>
+      </ProcessCreate>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
