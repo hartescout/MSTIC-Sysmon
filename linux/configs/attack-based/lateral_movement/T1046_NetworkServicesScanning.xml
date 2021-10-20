@@ -1,0 +1,23 @@
+<!--
+	Created: 10/15/2021
+  Modified: 10/17/2021
+
+  Technique: Remote Services: SSH
+  References:
+  - https://attack.mitre.org/techniques/T1021/004/
+-->
+<Sysmon schemaversion="4.81">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <Rule name="TechniqueID=T1021.004,TechniqueName=Remote Services: SSH" groupRelation="and">
+          <Image condition="end with">ssh</Image>
+          <CommandLine condition="contains">ConnectTimeout=</CommandLine>
+          <CommandLine condition="contains">BatchMode=yes</CommandLine>
+          <CommandLine condition="contains">StrictHostKeyChecking=no</CommandLine>
+          <CommandLine condition="contains any">wget;curl</CommandLine>
+        </Rule>
+      </ProcessCreate>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
