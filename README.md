@@ -1,3 +1,7 @@
+Be Aware- This is a fork of [MSTIC-Sysmon](https://github.com/microsoft/MSTIC-Sysmon) for my own testing to hopefully push to MSTIC in collaboration..
+* Rules will probably mainly focus on hunting post compromise
+* Rules will be in various states of broken, or maybe not. 
+-----------------------------------------------------------
 # MSTIC Sysmon Resources
 
 An open-source initiative by the Microsoft Threat Intelligence Center (MSTIC) R&D team to share resources used during research and detection development involving the System Monitor (**Sysmon**) utility from Sysinternals. This repository will cover the following Sysmon tools:
