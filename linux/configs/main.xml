@@ -165,5 +165,16 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
     <RuleGroup name="" groupRelation="or">
       <FileDelete onmatch="include" />
     </RuleGroup>
+    <!-- Exclude Certain Details -->
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+        <Rule name="Exclude MS omsagent" groupRelation="or">
+          <User condition="contains">omsagent</User>
+        </Rule>
+        <Rule name="Exclude omsagent in commandline" groupRelation="or">
+          <CommandLine condition="contains">/etc/logrotate.d</CommandLine>
+        </Rule>
+      </ProcessCreate>
+    </RuleGroup>
   </EventFiltering>
 </Sysmon>
