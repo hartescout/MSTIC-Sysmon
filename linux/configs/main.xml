@@ -29,6 +29,13 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">StrictHostKeyChecking=no</CommandLine>
           <CommandLine condition="contains any">wget;curl</CommandLine>
         </Rule>
+        <Rule name="TechniqueID=T1057,TechniqueName=Process Discovery" groupRelation="and">
+          <CommandLine condition="contains">ps</CommandLine>
+          <CommandLine condition="contains">top</CommandLine>
+          <CommandLine condition="contains">htop</CommandLine>
+          <CommandLine condition="contains">nmon</CommandLine>
+          <Image condition="contains any">htop;top;nmon;ps</Image>
+        </Rule> <!-- Added by @is_henderson 20 October-->
         <Rule name="TechniqueID=T1027.001,TechniqueName=Obfuscated Files or Information: Binary Padding" groupRelation="and">
           <Image condition="is">/bin/dd</Image>
           <CommandLine condition="contains all">dd;if=</CommandLine>
@@ -116,6 +123,15 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <Image condition="end with">ftpget</Image>
           <Image condition="end with">tftp</Image>
           <Image condition="end with">lwp-download</Image>
+        </Rule> <!-- Below added by @is_henderson 20 October 2021-->
+        <Rule name="TechniqueID=T1046,TechniqueName=Network Services Scanning" groupRelation="or">
+          <Image condition="end with">/netcat</Image>
+          <Image condition="end with">/ncl</Image>
+          <Image condition="end with">/telnet</Image>
+          <Image condition="end with">/nmap</Image>
+          <Image condition="end with">/curl</Image>
+          <Image condition="end with">/wget</Image>
+          <CommandLine condition="contains">l</CommandLine>
         </Rule>
       </NetworkConnect>
     </RuleGroup>
