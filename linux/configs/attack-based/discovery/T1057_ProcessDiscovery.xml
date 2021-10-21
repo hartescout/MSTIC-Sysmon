@@ -7,6 +7,7 @@
           <CommandLine condition="contains">top</CommandLine>
           <CommandLine condition="contains">htop</CommandLine>
           <CommandLine condition="contains">nmon</CommandLine>
+          <Image condition="contains any">htop;top;nmon;ps</Image>
         </Rule>
       </ProcessCreate>
     </RuleGroup>
