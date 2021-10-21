@@ -23,6 +23,43 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
     <!-- Event ID 1 == ProcessCreate -->
     <RuleGroup name="" groupRelation="or">
       <ProcessCreate onmatch="include">
+        <Rule name="TechniqueID=T1059 T1059.001,TechniqueName=Command Scripting Interpreter : Unix Shell" groupRelation="or">
+          <CommandLine condition="contains">wget  - http | perl</CommandLine>
+          <CommandLine condition="contains">wget  - http | sh</CommandLine>
+          <CommandLine condition="contains">wget  - http | bash</CommandLine>
+          <CommandLine condition="contains">python -m SimpleHTTPServer</CommandLine>
+          <CommandLine condition="contains">-m http.server</CommandLine>  # Python 3
+          <CommandLine condition="contains">import pty; pty.spawn</CommandLine>
+          <CommandLine condition="contains">socat exec:</CommandLine>
+          <CommandLine condition="contains">socat -O /tmp/</CommandLine>
+          <CommandLine condition="contains">socat tcp-connect</CommandLine>
+          <CommandLine condition="contains">echo binary >></CommandLine>
+        <!-- Malware -->
+          <CommandLine condition="contains">wget ; chmod +x</CommandLine>
+          <CommandLine condition="contains">wget ; chmod 777 </CommandLine>
+          <CommandLine condition="contains">cd /tmp || cd /var/run || cd /mnt</CommandLine>
+        <!-- Apache Struts in-the-wild exploit codes -->
+          <CommandLine condition="contains">stop;service iptables stop;</CommandLine>
+          <CommandLine condition="contains">stop;SuSEfirewall2 stop;</CommandLine>
+          <CommandLine condition="contains">chmod 777 2020</CommandLine>
+          <CommandLine condition="contains">>>/etc/rc.local</CommandLine>
+        <!-- Metasploit framework exploit codes-->
+          <CommandLine condition="contains">base64 -d /tmp/</CommandLine>
+          <CommandLine condition="contains"> | base64 -d </CommandLine>
+          <CommandLine condition="contains">/chmod u+s </CommandLine>
+          <CommandLine condition="contains">chmod +s /tmp/</CommandLine>
+          <CommandLine condition="contains">chmod u+s /tmp/</CommandLine>
+          <CommandLine condition="contains"> /tmp/haxhax</CommandLine>
+          <CommandLine condition="contains"> /tmp/ns_sploit</CommandLine>
+          <CommandLine condition="contains">nc -l -p </CommandLine>
+          <CommandLine condition="contains">cp /bin/ksh </CommandLine>
+          <CommandLine condition="contains">cp /bin/sh </CommandLine>
+          <CommandLine condition="contains"> /tmp/.b64 </CommandLine>
+          <CommandLine condition="contains">/tmp/ysocereal.jar</CommandLine>
+          <CommandLine condition="contains">/tmp/x </CommandLine>
+          <CommandLine condition="contains">; chmod +x /tmp/</CommandLine>
+          <CommandLine condition="contains">;chmod +x /tmp/</CommandLine>
+        </Rule>
         <Rule name="TechniqueID=T1021.004,TechniqueName=Remote Services: SSH" groupRelation="and">
           <Image condition="end with">ssh</Image>
           <CommandLine condition="contains">ConnectTimeout=</CommandLine>
@@ -175,8 +212,8 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
         <Rule name="Exclude omsagent in commandline" groupRelation="or">
           <CommandLine condition="contains">/etc/logrotate.d</CommandLine>
         </Rule>
-      </ProcessCreate>  
-    </RuleGroup>      
+      </ProcessCreate>
+    </RuleGroup>
   </EventFiltering>
 </Sysmon>
 =======
