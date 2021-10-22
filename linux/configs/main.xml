@@ -218,11 +218,6 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">/etc/logrotate.d</CommandLine>
         </Rule>
       </ProcessCreate>
-      <FileDelete onmatch="exclude">
-        <Rule name="FileDelete Exclusions" groupRelation="or">
-          <TargetFileName condition="contains">foobar</TargetFileName>
-        </Rule>
-      </FileDelete>
     </RuleGroup>
   </EventFiltering>
 </Sysmon>
