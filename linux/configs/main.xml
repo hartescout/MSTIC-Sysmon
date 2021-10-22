@@ -61,7 +61,6 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains"></CommandLine>
         </Rule>
         <Rule name="TechniqueID=T1068/T1190/T1203 - OMIGOD SCX RunAsProvider ExecuteShellCommand" groupRelation="and">
-    <!-- Rule to detect the use of the SCX RunAsProvider Invoke_ExecuteShellCommand to execute any UNIX/Linux command using the /bin/sh shell. SCXcore, started as the Microsoft Operations Manager UNIX/Linux Agent, is now used in a host of products including Microsoft Operations Manager. Microsoft Azure, and Microsoft Operations Management Suite.-->
            <CommandLine condition="contains">/bin/sh</CommandLine>
            <CurrentDirectory condition="contains">/var/opt/microsoft/scx/tmp</CurrentDirectory>
         </Rule>
