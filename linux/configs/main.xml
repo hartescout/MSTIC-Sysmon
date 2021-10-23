@@ -31,8 +31,8 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">socat tcp-connect</CommandLine>
           <CommandLine condition="contains">echo binary >></CommandLine>
           <!-- Malware -->
-          <CommandLine condition="contains any">wget;chmod +x</CommandLine>
-          <CommandLine condition="contains any">wget;chmod 777 </CommandLine>
+          <CommandLine condition="contains">chmod +x</CommandLine>
+          <CommandLine condition="contains">chmod 777 </CommandLine>
           <CommandLine condition="contains any">cd /tmp;cd /var/run;cd /mnt</CommandLine>
           <!-- Apache Struts in-the-wild exploit codes -->
           <CommandLine condition="contains">stop;service iptables stop;</CommandLine>
