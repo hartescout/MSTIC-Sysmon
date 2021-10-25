@@ -163,9 +163,11 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <DestinationHostname condition="contains">hashvault.pro</DestinationHostname>
         </Rule>
       </NetworkConnect>
+      </RuleGroup>
       <RuleGroup name="" groupRelation="or">
         <NetworkConnect onmatch="exclude">
           <!--SECTION: Microsoft-->
+        <Rule name="" groupRelation="or">
           <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</Image>
           <Image condition="end with">AppData\Local\Microsoft\Teams\current\Teams.exe</Image> <!--Microsoft: Teams-->
           <DestinationHostname condition="end with">.microsoft.com</DestinationHostname> <!--Microsoft:Update delivery-->
@@ -177,8 +179,8 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <!--Section: Loopback Addresses-->
           <DestinationIp condition="is">127.0.0.1</DestinationIp> <!--Credit @ITProPaul-->
           <DestinationIp condition="begin with">fe80:0:0:0</DestinationIp> <!--Credit @ITProPaul-->
+        </Rule>
         </NetworkConnect>
-      </RuleGroup>
     </RuleGroup>
     <!-- Event ID 5 == ProcessTerminate -->
     <RuleGroup name="" groupRelation="or">
