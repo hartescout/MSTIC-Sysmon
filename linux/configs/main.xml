@@ -61,7 +61,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">ConnectTimeout=</CommandLine>
           <CommandLine condition="contains">BatchMode=yes</CommandLine>
           <CommandLine condition="contains">StrictHostKeyChecking=no</CommandLine>
-          <CommandLine condition="contains any">wget;curl</CommandLine>
+          <!-- <CommandLine condition="contains any">wget;curl</CommandLine> -->
         </Rule>
         <Rule name="TechniqueID=T1027.001,TechniqueName=Obfuscated Files or Information: Binary Padding" groupRelation="and">
           <Image condition="is">/bin/dd</Image>
@@ -181,8 +181,8 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <TargetFilename condition="begin with">/var/spool/cron/crontabs/</TargetFilename>
         </Rule>
         <Rule name="TechniqueID=T1105,TechniqueName=Ingress Tool Transfer" groupRelation="or">
-          <Image condition="end with">wget</Image>
-          <Image condition="end with">curl</Image>
+          <!--<Image condition="end with">wget</Image>
+          <Image condition="end with">curl</Image> -->
           <Image condition="end with">ftpget</Image>
           <Image condition="end with">tftp</Image>
           <Image condition="end with">lwp-download</Image>
