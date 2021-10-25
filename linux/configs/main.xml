@@ -49,7 +49,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">/tmp/ns_sploit</CommandLine>
           <CommandLine condition="contains">nc -l -p </CommandLine>
           <CommandLine condition="contains">cp /bin/ksh </CommandLine>
-          <CommandLine condition="contains">cp /bin/sh </CommandLine>
+          <!-- <CommandLine condition="contains">cp /bin/sh </CommandLine> -->
           <CommandLine condition="contains">/tmp/.b64 </CommandLine>
           <CommandLine condition="contains">/tmp/ysocereal.jar</CommandLine>
           <CommandLine condition="contains">/tmp/x </CommandLine>
@@ -75,11 +75,11 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
         <Rule name="TechniqueID=T1053.003,TechniqueName=Scheduled Task/Job: Cron" groupRelation="or">
           <Image condition="end with">crontab</Image>
         </Rule>
-        <Rule name="TechniqueID=T1059.004,TechniqueName=Command and Scripting Interpreter: Unix Shell" groupRelation="or">
+        <!-- <Rule name="TechniqueID=T1059.004,TechniqueName=Command and Scripting Interpreter: Unix Shell" groupRelation="or">
           <Image condition="end with">/bin/bash</Image>
           <Image condition="end with">/bin/dash</Image>
           <Image condition="end with">/bin/sh</Image>
-        </Rule>
+        </Rule> -->
         <Rule name="TechniqueID=T1070.006,TechniqueName=Indicator Removal on Host: Timestomp" groupRelation="and">
           <Image condition="is">/bin/touch</Image>
           <CommandLine condition="contains any">-r;--reference;-t;--time</CommandLine>
