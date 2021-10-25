@@ -152,15 +152,15 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <Image condition="end with">lwp-download</Image>
         </Rule>
         <Rule name="Targeting XMR miningpool Domains" groupRelation="or">
-          <DestinationHostname condition="contains">minexmr.com</DestinationHostname>
-          <DestinationHostname condition="contains">supportminexmr.com</DestinationHostname>
-          <DestinationHostname condition="contains">c3pool.com</DestinationHostname>
-          <DestinationHostname condition="contains">nanopool.org</DestinationHostname>
-          <DestinationHostname condition="contains">2miners.com</DestinationHostname>
-          <DestinationHostname condition="contains">hashcity.org</DestinationHostname>
-          <DestinationHostname condition="contains">f2pool.com</DestinationHostname>
-          <DestinationHostname condition="contains">xmrpool.eu</DestinationHostname>
-          <DestinationHostname condition="contains">hashvault.pro</DestinationHostname>
+          <DestinationHostname condition="ends with">.minexmr.com</DestinationHostname>
+          <DestinationHostname condition="ends with">.supportminexmr.com</DestinationHostname>
+          <DestinationHostname condition="ends with">.c3pool.com</DestinationHostname>
+          <DestinationHostname condition="ends with">.nanopool.org</DestinationHostname>
+          <DestinationHostname condition="ends with">.2miners.com</DestinationHostname>
+          <DestinationHostname condition="ends with">.hashcity.org</DestinationHostname>
+          <DestinationHostname condition="ends with">.f2pool.com</DestinationHostname>
+          <DestinationHostname condition="ends with">xmrpool.eu</DestinationHostname>
+          <DestinationHostname condition="ends with">.hashvault.pro</DestinationHostname>
         </Rule>
       </NetworkConnect>
       </RuleGroup>
