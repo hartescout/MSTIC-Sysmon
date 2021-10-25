@@ -163,6 +163,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <DestinationHostname condition="contains">hashvault.pro</DestinationHostname>
         </Rule>
       </NetworkConnect>
+    </RuleGroup>
       <RuleGroup name="" groupRelation="or">
         <NetworkConnect onmatch="exclude">
           <!--SECTION: Microsoft-->
