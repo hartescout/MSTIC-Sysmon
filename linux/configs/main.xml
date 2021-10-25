@@ -151,7 +151,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <Image condition="end with">tftp</Image>
           <Image condition="end with">lwp-download</Image>
         </Rule>
-        <Rule name="" groupRelation="or">
+        <Rule name="Targeting XMR miningpool Domains" groupRelation="or">
           <DestinationHostname condition="contains">minexmr.com</DestinationHostname>
           <DestinationHostname condition="contains">supportminexmr.com</DestinationHostname>
           <DestinationHostname condition="contains">c3pool.com</DestinationHostname>
@@ -164,7 +164,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
         </Rule>
       </NetworkConnect>
       </RuleGroup>
-      <RuleGroup name="" groupRelation="or">
+      <RuleGroup name="Excludes MS Domains" groupRelation="or">
         <NetworkConnect onmatch="exclude">
           <!--SECTION: Microsoft-->
         <Rule name="" groupRelation="or">
