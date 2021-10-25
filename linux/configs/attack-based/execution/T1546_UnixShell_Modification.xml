@@ -12,6 +12,7 @@
         <FileCreate onmatch="include">
           <Rule name="TechniqueID=T1546.004 TechniqueName=Event Triggered Execution: Unix Shell Configuration Modification " groupRelation="or">
             <TargetFilename condition="is any">.bash_profile;.bashrc;.zshrc;.zsh_profile;.profile;profile;shells;bashrc;csh.rc;csh.login</TargetFilename>
+            <CommandLine condition="is any">.bashrc;.zshrc;.bash_profile;.zsh_profile</CommandLine>
           </Rule>
         </FileCreate>
       </RuleGroup>

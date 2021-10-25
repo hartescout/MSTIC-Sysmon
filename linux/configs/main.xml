@@ -31,8 +31,8 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">socat tcp-connect</CommandLine>
           <CommandLine condition="contains">echo binary >></CommandLine>
           <!-- Malware -->
-          <CommandLine condition="contains any">wget;chmod +x</CommandLine>
-          <CommandLine condition="contains any">wget;chmod 777 </CommandLine>
+          <CommandLine condition="contains">chmod +x</CommandLine>
+          <CommandLine condition="contains">chmod 777 </CommandLine>
           <CommandLine condition="contains any">cd /tmp;cd /var/run;cd /mnt</CommandLine>
           <!-- Apache Struts in-the-wild exploit codes -->
           <CommandLine condition="contains">stop;service iptables stop;</CommandLine>
@@ -49,7 +49,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">/tmp/ns_sploit</CommandLine>
           <CommandLine condition="contains">nc -l -p </CommandLine>
           <CommandLine condition="contains">cp /bin/ksh </CommandLine>
-          <CommandLine condition="contains">cp /bin/sh </CommandLine>
+          <!-- <CommandLine condition="contains">cp /bin/sh </CommandLine> -->
           <CommandLine condition="contains">/tmp/.b64 </CommandLine>
           <CommandLine condition="contains">/tmp/ysocereal.jar</CommandLine>
           <CommandLine condition="contains">/tmp/x </CommandLine>
@@ -61,7 +61,7 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <CommandLine condition="contains">ConnectTimeout=</CommandLine>
           <CommandLine condition="contains">BatchMode=yes</CommandLine>
           <CommandLine condition="contains">StrictHostKeyChecking=no</CommandLine>
-          <CommandLine condition="contains any">wget;curl</CommandLine>
+          <!-- <CommandLine condition="contains any">wget;curl</CommandLine> -->
         </Rule>
         <Rule name="TechniqueID=T1027.001,TechniqueName=Obfuscated Files or Information: Binary Padding" groupRelation="and">
           <Image condition="is">/bin/dd</Image>
@@ -75,11 +75,11 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
         <Rule name="TechniqueID=T1053.003,TechniqueName=Scheduled Task/Job: Cron" groupRelation="or">
           <Image condition="end with">crontab</Image>
         </Rule>
-        <Rule name="TechniqueID=T1059.004,TechniqueName=Command and Scripting Interpreter: Unix Shell" groupRelation="or">
+        <!-- <Rule name="TechniqueID=T1059.004,TechniqueName=Command and Scripting Interpreter: Unix Shell" groupRelation="or">
           <Image condition="end with">/bin/bash</Image>
           <Image condition="end with">/bin/dash</Image>
           <Image condition="end with">/bin/sh</Image>
-        </Rule>
+        </Rule> -->
         <Rule name="TechniqueID=T1070.006,TechniqueName=Indicator Removal on Host: Timestomp" groupRelation="and">
           <Image condition="is">/bin/touch</Image>
           <CommandLine condition="contains any">-r;--reference;-t;--time</CommandLine>
@@ -208,8 +208,8 @@ NG FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
           <TargetFilename condition="begin with">/var/spool/cron/crontabs/</TargetFilename>
         </Rule>
         <Rule name="TechniqueID=T1105,TechniqueName=Ingress Tool Transfer" groupRelation="or">
-          <Image condition="end with">wget</Image>
-          <Image condition="end with">curl</Image>
+          <!--<Image condition="end with">wget</Image>
+          <Image condition="end with">curl</Image> -->
           <Image condition="end with">ftpget</Image>
           <Image condition="end with">tftp</Image>
           <Image condition="end with">lwp-download</Image>
